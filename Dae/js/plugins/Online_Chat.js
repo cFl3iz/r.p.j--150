@@ -211,10 +211,10 @@ Game_Network.prototype.connectSocketsAfterLogin = function(){
      this.chatinput.style.position = 'absolute';
      this.chatinput.style.textIndent = '15px';
      this.chatinput.style.zIndex = 100;
-     this.chatinput.placeholder = 'Insert Text Here';
+     this.chatinput.placeholder = '此处发言..';
      this.chatinput.style.color = '#000000';
      this.chatinput.style.border = 'none';
-     this.chatinput.style.visibility = 'hidden';
+     this.chatinput.style.visibility = 'visible';
      if (inputWinBackPic===''){
        this.chatinput.style.background = inputWinBack;
      }else{
@@ -231,7 +231,7 @@ Game_Network.prototype.connectSocketsAfterLogin = function(){
      this.txtarea.style.width = textWinWidth + 'px';
      this.txtarea.style.height = textWinHeight + 'px';
      this.txtarea.style.zIndex = 99;
-     this.txtarea.style.visibility = 'hidden';
+     this.txtarea.style.visibility = 'visible';
      if (textWinBackPic===''){
        this.txtarea.style.background = textWinBack;
      }else{

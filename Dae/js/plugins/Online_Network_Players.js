@@ -77,6 +77,11 @@ var NetworkFlag = false;
 
 var OnlineMV_NetPlayer_SocketConn_Alias = Game_Network.prototype.connectSocketsAfterLogin;
 Game_Network.prototype.connectSocketsAfterLogin = function(){
+
+
+
+
+
 	OnlineMV_NetPlayer_SocketConn_Alias.call(this);
 
 	$gameNetwork.connectSocket('netplayers','/netplayers',false);
@@ -89,6 +94,10 @@ Game_Network.prototype.connectSocketsAfterLogin = function(){
     if (NetPlayerNameType===0){
       networkName = data.name;
     }
+
+    	$gameParty.leader()._name = data.name;
+    	 $gameParty.leader()._level = data.lv;
+    	console.log(" -- set name and level -- " + JSON.stringify(data));
 	});
 
 	socket.on('NetworkPlayersXY', function(data){
@@ -184,7 +193,7 @@ Game_Player.prototype.refresh = function() {
   NetPlayer_GmePlayer_refresh_alias.call(this);
   if(this.namepop===undefined) return;
   if (showPlayersName==='false') return;
-    if (NetPlayerNameType===1) {
+    if (NetPlayerNameType===1) { 
       this.namepop = $gameParty.leader()._name;
     }else{
       this.namepop = networkName;

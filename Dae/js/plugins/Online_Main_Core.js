@@ -30,6 +30,9 @@ Imported.Online_Main_Core = true;
 
  var $gameNetwork = null;
 
+
+ 
+
  var Nel_Online_Core_dataCreateGameObj =  DataManager.createGameObjects;
  DataManager.createGameObjects = function() {
     Nel_Online_Core_dataCreateGameObj.call(this);
@@ -80,7 +83,8 @@ Game_Network.prototype.connectSocket = function(socket_name, namespace) {
         'x-access-token': $gameNetwork._token
       }
     });
-    console.log('Socket Authenticated');
+    console.log('Socket Authenticated url ='+url +'/namespace = ' + namespace + '/socket_name =' +socket_name);
+    console.log('昨天做到这里 你看一下这个日志 ');
   });
   socket.on('disconnect', function () {
     console.log('Socket Disconnected');

@@ -110,10 +110,11 @@ router.post('/login', function(req, res){
     var profile = {
       name: account.username,
       email: account.email,
+      lv: account.lv,
       id: account._id,
       rank: account.rank
     };
-
+      log.info('profile='+profile);
     //Check for lost password flag and temp password
      if (account.lostPasswordFlag===true){
       var tempPasswordHash = crypto.createHash('sha1').update(account.lostPasswordTemp + config.firstHash).digest('hex');
@@ -126,7 +127,8 @@ router.post('/login', function(req, res){
         }
         return res.status(200).json({
           temp:tempPasswordHash,
-          name:account.username
+          name:account.username,
+            lv:account.lv
          });
         }
        }

@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var passportLocalMongoose = require('passport-local-mongoose');
 
-var allFields = 'id salt hash username email activated actCode rank socketId lostPasswordFlag lostPasswordTemp lostPasswordExpires';
+var allFields = 'id salt hash username email activated lv actCode rank socketId lostPasswordFlag lostPasswordTemp lostPasswordExpires';
 
 var Account = new Schema({
     username: {type: String, required: true, index: { unique: true}},
