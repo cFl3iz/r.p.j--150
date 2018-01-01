@@ -117,7 +117,7 @@ var Nasty = Nasty || {};
 	MMO_Scene_Title.prototype.createRegistrationForm = function() {
 		$("#ErrorPrinter").html(
 			'<div id="RegisterForm" class="panel panel-primary" style="width:'+(Graphics.boxWidth - (Graphics.boxWidth / 3))+'px">'+
-				'<div class="panel-heading">Register</div>'+
+				'<div class="panel-heading">注册</div>'+
 				'<div class="panel-body">'+
 					'<div id="loginErrBox"></div>'+
   				'<div class="form-group">'+
@@ -151,23 +151,25 @@ var Nasty = Nasty || {};
 	// maybe using template file?
 	// Can be wise to work on a set of sprite-based form inputs for
 	// a better visual integration.
+	// width:'+(Graphics.boxWidth - (Graphics.boxWidth / 3))+'px">'
+	// style="width:100%;font-size:20px;"
 	MMO_Scene_Title.prototype.createLoginForm = function() {
 		$("#ErrorPrinter").html(
-			'<div id="LoginForm" class="panel panel-primary" style="width:'+(Graphics.boxWidth - (Graphics.boxWidth / 3))+'px">'+
-				'<div class="panel-heading">Login</div>'+
+			'<div id="LoginForm" class="panel panel-primary" style="width:100%;font-size:25px;">'+
+				'<div class="panel-heading">登录你的游戏账户</div>'+
 				'<div class="panel-body">'+
 					'<div id="loginErrBox"></div>'+
 					'<div class="input-group">'+
 						'<span class="input-group-addon" id="username-addon"><i class="fa fa-user"></i></span>'+
-						'<input type="text" class="form-control login-input" id="inputUsername" placeholder="Username" aria-describedby="username-addon">'+
+						'<input type="text" class="form-control login-input" id="inputUsername" placeholder="用户名" aria-describedby="username-addon">'+
 					'</div><br>'+
 					'<div class="input-group">'+
 						'<span class="input-group-addon" id="password-addon"><i class="fa fa-lock"></i></span>'+
-						'<input type="password" class="form-control login-input" id="inputPassword" placeholder="Password" aria-describedby="password-addon">'+
+						'<input type="password" class="form-control login-input" id="inputPassword" placeholder="密码" aria-describedby="password-addon">'+
 					'</div><br>'+
-					'<button id="btnConnect" class="btn btn-primary">Connect</button>'+
-					'<button id="btnRegister" class="btn btn-default">Register</button>'+
-          '<button id="btnForgotPassword" class="btn btn-link btn-sm">Forgot Password?</button>'+
+					'<button id="btnConnect" class="btn btn-primary" style="font-size:27px;">登录</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
+					'<button id="btnRegister" class="btn btn-default" style="font-size:27px;">注册</button>'+
+          '<button id="btnForgotPassword" class="btn btn-link btn-sm" style="font-size:27px;">&nbsp;&nbsp;我忘记密码了?</button>'+
 				'</div>'+
 			'</div>');
 
@@ -185,10 +187,10 @@ var Nasty = Nasty || {};
     $("#btnForgotPassword").bind("click touchstart",function(){that.createLostPasswordForm();});
     $("#inputUsername").focus();
 	};
-
+//style="width:'+(Graphics.boxWidth - (Graphics.boxWidth / 3))+'px"
 	MMO_Scene_Title.prototype.createActivationForm = function() {
 		$("#ErrorPrinter").html(
-			'<div id="ActivationForm" class="panel panel-primary" style="width:'+(Graphics.boxWidth - (Graphics.boxWidth / 3))+'px">'+
+			'<div id="ActivationForm" class="panel panel-primary" style="width:100%;font-size:20px;">'+
 				'<div class="panel-heading">Activation</div>'+
 				'<div class="panel-body">'+
 					'<div id="loginErrBox"></div>'+
